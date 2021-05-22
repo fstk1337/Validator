@@ -65,12 +65,13 @@ class Validator {
 
     public static function validate($data)
     {
+        self::$errors = [];
         if (allFieldsAreEmpty($data)) {
             self::$errors['empty'] = self::$messages['empty'];
             return false;
         }
         foreach (self::$rules as $key => $value) {
-            if ($data[$key] != $value) {
+            if (preg_match($value, $data[$key]) != 1) {
                 self::$errors[$key] = self::$messages[$key];
             }
         }

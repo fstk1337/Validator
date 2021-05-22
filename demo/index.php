@@ -1,4 +1,3 @@
-<pre>
 <?php
     require '../config/init.php';
     if (sizeof($_POST) > 0) {
@@ -6,7 +5,6 @@
         $errors = Validator::getErrors();
     }
 ?>
-</pre>
 <!DOCTYPE html>
 <html lang="en">
 <head>
